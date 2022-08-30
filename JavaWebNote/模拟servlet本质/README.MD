@@ -1,0 +1,35 @@
+### 1.7 模拟servlet本质
+
+- 充当SUN公司的角色，制定servlet规范
+
+  - javax.serlvet.Servlet接口
+
+- 充当Tomcat服务器的开发者
+
+  
+
+- 充当webapp的开发者
+
+  - BankServlet implements Servlet
+  - UserLoginServlet implements Servlet
+  - UserListServlet implements Servlet
+
+- 通过我们的分析：
+
+  - 对于我们Javaweb程序员来说，我们只需要做两件事：
+    - 编写一个类实现servlet接口
+    - 将编写的类配置到配置文件中，在配置文件中：指定 请求路径  和  类名  的关系。
+
+- 注意：
+  - 这个配置文件名的文件名不能乱来，固定的
+  - 这个配置文件的存放路径不能乱来，固定的
+  - 文件名、文件路径都是SUN公司制定的Servlet规范中的明细
+
+- 严格意义上来说，Servlet其实并不是简单的一个接口：
+  - Servlet规范中规定了：
+    - 一个合格的webapp应该是一个怎样的目录结构
+    - 一个合格的webapp应该由一个怎样的配置文件
+    - 一个合格的webapp配置文件路径放在哪里
+    - 一个合格的webapp中java程序放在哪里
+    - 这些都是Servlet规范中规定的
+  - Tomcat服务器要遵循Servlet规范。JavaWEB程序员也要遵循这个Servlet规范。这样Tomcat服务器和webapp才能解耦合
